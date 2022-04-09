@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-image: url("monstera.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  width: 100;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.displayBudget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 3.5rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2px;
+}
+.displayBudget span {
+  padding: 5px;
+  font-size: 3rem;
+}
+.income {
+  background-color: rgba(43, 43, 173, 0.925);
+  color: wheat;
+  padding: 0.5rem 1rem;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.income span:nth-child(2) {
+  margin-right: 3rem;
+  letter-spacing: 0.7px;
+}
+.expense {
+  background-color: rgb(151, 74, 23);
+  color: wheat;
+  padding: 0.5rem 1rem;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.expense span:nth-child(2) {
+  margin-right: -6rem;
+  letter-spacing: 0.7px;
+}
+#percent {
+  width: 30px;
+  background: rgba(165, 162, 162, 0.411);
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 10px;
+  text-align: center;
+}
+/* Form */
+.form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70px;
+  background-color: rgba(119, 204, 200, 0.24);
+  border: 1px solid rgba(0, 0, 0, 0.219);
+}
+#sign {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.219);
+}
+#desc {
+  width: 25rem;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.219);
+}
+#budget {
+  width: 80px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.219);
+}
+#done {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.219);
+  border-radius: 20px;
+  background-color: rgb(151, 74, 23);
+  color: wheat;
+  cursor: pointer;
+}
+
+#displayBudget {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px 0;
+}
+#budgetSign {
+  margin-right: -12px;
+}
+.incomeDisplay {
+  padding: 0;
+}
+.incomeDisplay #caption {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(51, 76, 85);
+}
+.expensesDisplay #caption {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(161, 38, 38, 0.692);
+}
+table {
+  min-width: 400px;
+  border-spacing: 0;
+}
+table:last-child {
+  border-bottom: 1px solid rgba(40, 143, 240, 0.233);
+}
+td {
+  font-size: 1.1rem;
+  padding: 10px 10px;
+  border-top: 1px solid rgba(40, 143, 240, 0.233);
+}
+tr:nth-child(even) {
+  background-color: rgba(125, 125, 238, 0.164);
+}
+td:first-child {
+  color: rgba(51, 76, 85, 0.705);
+}
+td:last-child {
+  text-align: right;
+}
+
+/* Media */
+@media (max-width: 900px) {
+  table {
+    min-width: 350px;
+  }
+}
+@media (max-width: 780px) {
+  table {
+    min-width: 300px;
+  }
+}
+@media (max-width: 660px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .form {
+    height: 60px;
+  }
+  #sign {
+    width: 40px;
+    height: 35px;
+  }
+  #desc {
+    width: 18rem;
+    height: 35px;
+  }
+  #budget {
+    width: 70px;
+    height: 35px;
+  }
+  #done {
+    width: 35px;
+    height: 35px;
+  }
+  #displayBudget {
+    flex-direction: column;
+    align-items: center;
+  }
+  table {
+    min-width: 350px;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  #sign {
+    width: 35px;
+    height: 35px;
+  }
+  #desc {
+    width: 10rem;
+    height: 35px;
+  }
+  #budget {
+    width: 45px;
+    height: 35px;
+  }
+  table {
+    min-width: 300px;
+  }
+}
+@media (max-width: 340px) {
+  h1 {
+    font-size: 1rem;
+  }
+  .income {
+    width: 200px;
+    padding: 0rem 1rem;
+  }
+  .expense {
+    width: 200px;
+  }
+  .expense span:nth-child(2) {
+    margin-right: -0.4rem;
+  }
+  .form {
+    height: 60px;
+  }
+  #sign {
+    width: 20px;
+    height: 35px;
+    margin-right: 7px;
+  }
+  #desc {
+    width: 8rem;
+    height: 35px;
+    margin-right: 7px;
+  }
+  #budget {
+    width: 45px;
+    height: 35px;
+    margin-right: 7px;
+  }
+  #done {
+    width: 35px;
+    height: 35px;
+  }
+  table {
+    min-width: 250px;
+  }
+}

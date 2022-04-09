@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="./app.css" />
+    <title>My Budget</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Available Budget in September 2022:</h1>
+      <div class="displayBudget">
+        <span id="budgetSign"></span><span id="currentBudget"></span>
+      </div>
+      <div class="income">
+        <span>INCOME</span>
+        <span id="income"></span>
+      </div>
+      <div class="expense">
+        <span>EXPENSES</span>
+        <span id="expenses"></span>
+        <span id="percent">%</span>
+      </div>
+    </div>
+
+    <div class="form">
+      <form id="budgetForm">
+        <select name="sign" id="sign" required>
+          <option value="+" selected>+</option>
+          <option value="-">-</option>
+        </select>
+        <input
+          type="text"
+          name="desc"
+          id="desc"
+          maxlength="{50}"
+          placeholder="   Add description"
+          required
+        />
+        <input
+          type="number"
+          name="budget"
+          id="budget"
+          min="1"
+          size="50"
+          placeholder=" Value"
+          required
+        />
+        <button id="done">Done</button>
+      </form>
+    </div>
+    <div id="displayBudget">
+      <div class="incomeDisplay">
+        <h2 id="caption">INCOME</h2>
+        <table id="incomeDisplay"></table>
+      </div>
+      <div class="expensesDisplay">
+        <h2 id="caption">EXPENSES</h2>
+        <table id="expensesDisplay"></table>
+      </div>
+    </div>
+  </body>
+</html>
