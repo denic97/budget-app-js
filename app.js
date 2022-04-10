@@ -6,6 +6,7 @@ const currentBudget = document.querySelector('#currentBudget');
 const incomes = document.querySelector('#income');
 const expenses = document.querySelector('#expenses');
 const percent = document.querySelector('#percent');
+const hover = document.getElementsByClassName('hover');
 
 const budgetForm = document.querySelector('#budgetForm')
 const signInput = budgetForm['sign'];
@@ -14,7 +15,6 @@ const budgetInput = budgetForm['budget'];
 
 const budgetsIncome = JSON.parse(localStorage.getItem('listOfIncomes')) || [];
 const budgetsExpense = JSON.parse(localStorage.getItem('listOfExpenses')) || [];
-
 
 const addBudget = (sign, desc, budget) => {
   if (sign === "+") {
@@ -42,15 +42,18 @@ const addBudget = (sign, desc, budget) => {
 const createBudgetElement = ({ sign, desc, budget }) => {
   //create elements
   const newTr = document.createElement('tr');
+  newTr.className = 'hover';
   const newTd1 = document.createElement('td');
   const newTd2 = document.createElement('td');
+  const newTd3 = document.createElement('td');
 
   //fill the content
   newTd1.innerText = desc;
   newTd2.innerText = sign + budget;
+  newTd3.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
 
   //add to the DOM
-  newTr.append(newTd1, newTd2);
+  newTr.append(newTd1, newTd2, newTd3);
   if (sign === '+') {
     incomeDisplay.appendChild(newTr);
   }
@@ -112,3 +115,34 @@ budgetForm.onsubmit = (e) => {
   descInput.value = '';
   budgetInput.value = '';
 }
+
+// remove button
+for (let i = 0; i < hover.length; i++) {
+  hover[i].addEventListener('mouseenter', () => {
+    // hover[i].children[2].style.opacity = '1';
+    hover[i].children[2].children[0].style.visibility = 'inherit';
+  });
+  hover[i].addEventListener('mouseleave', () => {
+    hover[i].children[2].children[0].style.visibility = 'hidden';
+  });
+
+// removing item
+  hover[i].children[2].addEventListener('click', () => {
+    if (hover[i].children[1].innerText[0] == '+') {
+      let items = JSON.parse(localStorage.getItem('listOfIncomes'));
+      items.splice(i,1);
+      items = JSON.stringify(items);
+      localStorage.setItem('listOfIncomes', items);
+      location.reload();
+    }
+    else {
+      let items = JSON.parse(localStorage.getItem('listOfExpenses'));
+      items.splice(i,1);
+      items = JSON.stringify(items);
+      localStorage.setItem('listOfExpenses', items);
+      location.reload();
+    }
+  });
+}
+
+

@@ -148,6 +148,7 @@ table:last-child {
 }
 td {
   font-size: 1.1rem;
+  font-weight: 500;
   padding: 10px 10px;
   border-top: 1px solid rgba(40, 143, 240, 0.233);
 }
@@ -157,8 +158,22 @@ tr:nth-child(even) {
 td:first-child {
   color: rgba(51, 76, 85, 0.705);
 }
-td:last-child {
+td:nth-child(3) {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(179, 38, 38, 0.856);
+  cursor: pointer;
+  width: 10px;
+}
+td:nth-child(2) {
   text-align: right;
+  color: rgba(255, 0, 0, 0.788);
+}
+i {
+  color: rgba(255, 0, 0, 0.938);
+  font-size: 1.6rem;
+  visibility: hidden;
 }
 
 /* Media */
